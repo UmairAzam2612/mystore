@@ -1,4 +1,18 @@
-export default function ProductCard({ product, onAdd }) {
+type Product = {
+  id: number
+  title: string
+  price: number
+  image: string
+  alt: string
+  category: string
+}
+
+type ProductCardProps = {
+  product: Product
+  onAdd: () => void
+}
+
+export default function ProductCard({ product, onAdd }: ProductCardProps) {
   return (
     <div className="bg-white border rounded-lg overflow-hidden hover:shadow-xl transform hover:-translate-y-1 transition">
       <img
